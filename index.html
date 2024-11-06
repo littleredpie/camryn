@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cameron</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'EB Garamond', serif;
+            background-color: #4b0082; /* Background color to darker navy */
+            color: #fff; /* Text color = white */
+            border-top: 2px solid #fff; /* Border color to white */
+        }
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            border-bottom: 2px solid #fff; /* Border color to white */
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 2px solid #fff; /* Border color to white */
+            border-radius: 5px 5px 0 0;
+            margin-right: 2px;
+            color: #fff;
+        }
+        .tab:nth-child(1) {
+            background-color: #9a4eae; /* Lavender */
+        }
+        .tab:nth-child(2) {
+            background-color: #6a0dad; /* Purple */
+        }
+        .tab:nth-child(3) {
+            background-color: #2636A0; /* Blue */
+        }
+        .tab:nth-child(4) {
+            background-color: #16166B; /* Teal */
+        }
+        .tab:hover {
+            opacity: 0.7;
+        }
+        .tab-content {
+            display: none;
+            border: 4px solid #000000; /* Purple border for all tabs */
+            border-top: none;
+            width: 800px;
+            height: 1000px;
+            overflow: auto;
+            background-color: #fff; /* Content box background to white */
+            color: #000; /* Changed content text color to black */
+            padding: 20px;
+            margin: 20px 0; /* Added margin for spacing */
+            font-family: 'EB Garamond', serif; /* EB Garamond to content-box */
+        }
+        .tab-content.active {
+            display: block;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+        .content {
+            padding: 20px;
+        }
+        a {
+            color: #000; /* Changed link color to black */
+            text-decoration: underline;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            margin: 0;
+            padding-left: 40px; /* Indent bullet points */
+        }
+        h2, h3, h4 {
+            margin-bottom: 0;
+        }
+        h3, h4 {
+            margin-top: 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #4b0082; /* Decreased border thickness for contact me text box */
+            color: #000; /* Text color in the text box */
+        }
+        input[type="submit"] {
+            cursor: pointer;
+            background-color: #6a0dad;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px #999;
+            transition: all 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #5a00a3;
+        }
+        input[type="submit"]:active {
+            box-shadow: 0 2px #666;
+            transform: translateY(2px);
+        }
+        .profile-pic {
+            display: block;
+            margin-top: 10px;
+            width: 150px; /* Adjusted width */
+            height: auto;
+            border: 2px solid #000000; /* photo border to black */
+            border-radius: 5px; /* Made photo rectangle or square */
+        }
+        .favorite-question {
+            margin-bottom: 10px;
+            font-weight: bold; /* Make questions bold */
+        }
+        .answer {
+            margin-left: 20px;
+            color: #000; /* Regular font color for answers */
+            list-style-type: disc; /* Bullet point style for answers */
+            font-weight: normal; /* Regular font-weight for answers */
+        }
+        .photos-container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+            width: 200px;
+            align-items: center;
+            gap: 10px;
+        }
+        .photos-container img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #4b0082; /* Border for images */
+            border-radius: 5px;
+        }
+        .photo-description {
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h2>Cameron</h2>
+    <p><a href="mailto:cam8993@hotmail.com" style="color: #fff; text-decoration: underline;">cam8993@hotmail.com</a> | -</p>
+    <img src="https://raw.githubusercontent.com/octupusSquare/Cameron/master/profile_pic.jpg" alt="profile_pic.jpg" class="profile-pic">
+    <div class="tab-container">
+        <div class="tab active" onclick="showTab('about')">About Me</div>
+        <div class="tab" onclick="showTab('Socials')">Socials</div>
+        <div class="tab" onclick="showTab('Services/Prices')">Services/Prices</div>
+        <div class="tab" onclick="showTab('storybook')">Storybook</div>
+    </div>
+    <div id="about" class="tab-content active">
+        <div class="content">
+            <h3>Short little about</h3>
+            <ul>
+                <li>Student</li>
+            </ul>
+            <h3>Interests</h3>
+            <ul class="interests">
+                <li>Literature, Broadway, Travel, Nature</li>
+            </ul>
+            <h4>Contact Me</h4>
+            <form action="mailto:cam8993@hotmail.com" method="post" enctype="text/plain">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message (optional):</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+                <input type="submit" value="Send">
+            </form>
+        </div>
+    </div>
+    <div id="Socials" class="tab-content">
+        <div class="content">
+            <h2>Connect!</h2>
+            <p>Link your socials here.</p>
+        </div>
+    </div>
+    <div id="Services/Prices" class="tab-content">
+        <div class="content">
+            <h2>Services/Prices</h2>
+            <p>Details on offered services and pricing.</p>
+        </div>
+    </div>
+    <div id="storybook" class="tab-content">
+        <div class="content">
+            <h2>Storybook</h2>
+            <p>Personal stories and experiences shared here.</p>
+        </div>
+    </div>
+    <script>
+        function showTab(tabId) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show the selected tab content
+            const selectedTabContent = document.getElementById(tabId);
+            if (selectedTabContent) selectedTabContent.classList.add('active');
+
+            // Add active class to the clicked tab
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
