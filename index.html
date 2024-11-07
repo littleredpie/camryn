@@ -67,7 +67,7 @@
             width: 100%;
         }
         textarea {
-            height: 150px; /* Enlarged height */
+            height: 150px;
         }
         input[type="submit"] {
             cursor: pointer;
@@ -95,11 +95,28 @@
             margin-top: 0;
             padding-left: 40px;
         }
-        .quiz-option {
-            padding-left: 60px;
-            display: block;
+        /* Quiz styling adjustments */
+        .quiz-form {
+            display: flex;
+            flex-direction: column;
+            gap: 5px; /* Reduce space between quiz items */
         }
-        .quiz-question, form label { margin-bottom: 3px; }
+        .quiz-question {
+            margin-bottom: 2px;
+        }
+        .quiz-option {
+            padding-left: 20px; /* Consistent indentation */
+            margin-bottom: 2px; /* Reduced space between options */
+        }
+        button {
+            margin-top: 10px; /* Reduced space above button */
+            padding: 8px;
+            background-color: #8B0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -151,7 +168,7 @@
             <h2>Services/Prices</h2>
             <li>$420 avg.</li>
             <h1>Quiz Time</h1>
-            <form id="quizForm">
+            <form id="quizForm" class="quiz-form">
                 <h3 class="quiz-question">1. Name?</h3>
                 <textarea name="question1" placeholder="Your answer here..."></textarea>
                 
@@ -200,19 +217,10 @@
 
         function submitQuiz() {
             const formData = new FormData(document.getElementById('quizForm'));
-            let quizData = {};
+            let emailBody = "Quiz Results:\n";
             formData.forEach((value, key) => {
-                if (!quizData[key]) {
-                    quizData[key] = [];
-                }
-                quizData[key].push(value);
+                emailBody += `${key}: ${value}\n`;
             });
-
-            const emailBody = `
-                Question 1 Answers: ${quizData['question1'] ? quizData['question1'].join(', ') : ''}\n
-                Question 2 Answer: ${quizData['question2'] ? quizData['question2'][0] : ''}\n
-                Question 3 Answer: ${quizData['question3'] ? quizData['question3'][0] : ''}\n
-            `;
 
             window.location.href = `mailto:cam8993@hotmail.com?subject=Quiz Results&body=${encodeURIComponent(emailBody)}`;
         }
