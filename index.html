@@ -12,18 +12,19 @@
             height: 100vh;
             margin: 0;
             font-family: 'EB Garamond', serif;
-            background-color: #660000; /* Deeper red background */
-            color: #fff; /* Text color = white */
-            border-top: 2px solid #fff; /* Border color to white */
+            background-color: #660000;
+            color: #fff;
+            border-top: 2px solid #fff;
         }
         h2 {
-            margin-bottom: 5px; /* Reduced margin between name and contact info */
+            margin: 0;
+            padding-top: 10px;
         }
         .tab-container {
             display: flex;
             justify-content: center;
-            margin-top: 20px;
-            border-bottom: 2px solid #fff; /* Border color to white */
+            margin-top: 10px;
+            border-bottom: 2px solid #fff;
         }
         .tab {
             padding: 10px 20px;
@@ -33,21 +34,11 @@
             margin-right: 2px;
             color: #fff;
         }
-        .tab:nth-child(1) {
-            background-color: #8B0000; /* Dark red */
-        }
-        .tab:nth-child(2) {
-            background-color: #5A0E0E; /* Darker red */
-        }
-        .tab:nth-child(3) {
-            background-color: #400000; /* Very dark red */
-        }
-        .tab:nth-child(4) {
-            background-color: #300000; /* Deep red */
-        }
-        .tab:hover {
-            opacity: 0.8;
-        }
+        .tab:nth-child(1) { background-color: #8B0000; }
+        .tab:nth-child(2) { background-color: #5A0E0E; }
+        .tab:nth-child(3) { background-color: #400000; }
+        .tab:nth-child(4) { background-color: #300000; }
+        .tab:hover { opacity: 0.8; }
         .tab-content {
             display: none;
             border: 4px solid #000;
@@ -61,22 +52,22 @@
             margin: 20px 0;
             font-family: 'EB Garamond', serif;
         }
-        .tab-content.active {
-            display: block;
-        }
-        .content {
-            padding: 20px;
-        }
+        .tab-content.active { display: block; }
+        .content { padding: 20px; }
         form {
             display: flex;
             flex-direction: column;
             gap: 5px;
         }
         input, textarea {
-            padding: 10px;
+            padding: 12px;
             font-size: 16px;
             border: 1px solid #660000;
             color: #000;
+            width: 100%;
+        }
+        textarea {
+            height: 100px;
         }
         input[type="submit"] {
             cursor: pointer;
@@ -87,38 +78,28 @@
             box-shadow: 0 4px #999;
             transition: all 0.3s ease;
         }
-        input[type="submit"]:hover {
-            background-color: #5A0E0E;
-        }
+        input[type="submit"]:hover { background-color: #5A0E0E; }
         input[type="submit"]:active {
             box-shadow: 0 2px #666;
             transform: translateY(2px);
         }
         .profile-pic {
-            display: block;
-            margin-top: 10px;
+            margin-top: 5px;
             width: 150px;
             height: auto;
             border: 2px solid #000;
             border-radius: 5px;
         }
-        /* Additional styling to reduce space between header and bullet points */
-        h3, h4 {
-            margin-bottom: 3px;
-        }
+        h3, h4 { margin-bottom: 3px; }
         ul {
             margin-top: 0;
-            padding-left: 40px; /* Increased padding to indent bullet points */
+            padding-left: 40px;
         }
-        /* Indent quiz options further */
         .quiz-option {
-            padding-left: 40px; /* Increased indentation */
+            padding-left: 60px;
             display: block;
         }
-        /* Reduce space between quiz questions and options */
-        .quiz-question, form label {
-            margin-bottom: 3px;
-        }
+        .quiz-question, form label { margin-bottom: 3px; }
     </style>
 </head>
 <body>
@@ -128,9 +109,9 @@
     
     <div class="tab-container">
         <div class="tab active" onclick="showTab('about')">About Me</div>
-        <div class="tab" onclick="showTab('Socials')">Socials</div>
-        <div class="tab" onclick="showTab('Services/Prices')">Services/Prices</div>
-        <div class="tab" onclick="showTab('storybook')">Storybook</div>
+        <div class="tab" onclick="checkPasscode('Socials')">Socials</div>
+        <div class="tab" onclick="checkPasscode('Services/Prices')">Services/Prices</div>
+        <div class="tab" onclick="checkPasscode('storybook')">Storybook</div>
     </div>
 
     <div id="about" class="tab-content active">
@@ -160,7 +141,7 @@
     <div id="Socials" class="tab-content">
         <div class="content">
             <h2>Policy?</h2>
-            <li>Hygeine.</li>
+            <li>Hygiene.</li>
             <li>No </li>
         </div>
     </div>
@@ -169,57 +150,31 @@
         <div class="content">
             <h2>Services/Prices</h2>
             <li>$420 avg.</li>
-            
-            
             <h1>Quiz Time</h1>
             <form id="quizForm">
-                <h3 class="quiz-question">3. Name?</h3>
-                <textarea name="question3" rows="4" cols="50" placeholder="Your answer here..."></textarea><br><br>
+                <h3 class="quiz-question">1. Name?</h3>
+                <textarea name="question1" rows="4" cols="50" placeholder="Your answer here..."></textarea>
                 
-                <h3 class="quiz-question">1. Which are version control systems? (Select all)</h3>
-                <label class="quiz-option"><input type="checkbox" name="question1" value="Git"> Git</label>
-                <label class="quiz-option"><input type="checkbox" name="question1" value="SVN"> SVN</label>
-                <label class="quiz-option"><input type="checkbox" name="question1" value="Mercurial"> Mercurial</label>
-                <label class="quiz-option"><input type="checkbox" name="question1" value="Dropbox"> Dropbox</label>
+                <h3 class="quiz-question">2. Which are version control systems? (Select all)</h3>
+                <label class="quiz-option"><input type="checkbox" name="question2" value="Git"> Git</label>
+                <label class="quiz-option"><input type="checkbox" name="question2" value="SVN"> SVN</label>
+                <label class="quiz-option"><input type="checkbox" name="question2" value="Mercurial"> Mercurial</label>
+                <label class="quiz-option"><input type="checkbox" name="question2" value="Dropbox"> Dropbox</label>
 
-                <h3 class="quiz-question">2. ?</h3>
-                <label class="quiz-option"><input type="radio" name="question2" value="Hosting code repositories"> Hosting code repositories</label>
-                <label class="quiz-option"><input type="radio" name="question2" value="Image editing"> Image editing</label>
-                <label class="quiz-option"><input type="radio" name="question2" value="Video sharing"> Video sharing</label>
-
-                <h3 class="quiz-question">3. How does GitHub help in collaboration?</h3>
-                <textarea name="question3" rows="4" cols="50" placeholder="Your answer here..."></textarea><br><br>
+                <h3 class="quiz-question">3. Purpose of GitHub?</h3>
+                <label class="quiz-option"><input type="radio" name="question3" value="Hosting code repositories"> Hosting code repositories</label>
+                <label class="quiz-option"><input type="radio" name="question3" value="Image editing"> Image editing</label>
+                <label class="quiz-option"><input type="radio" name="question3" value="Video sharing"> Video sharing</label>
 
                 <button type="button" onclick="submitQuiz()">Submit Quiz</button>
             </form>
-
-            <script>
-                function submitQuiz() {
-                    const formData = new FormData(document.getElementById('quizForm'));
-                    let quizData = {};
-                    formData.forEach((value, key) => {
-                        if (!quizData[key]) {
-                            quizData[key] = [];
-                        }
-                        quizData[key].push(value);
-                    });
-
-                    const emailBody = `
-                        Question 1 Answers: ${quizData['question1'].join(', ')}\n
-                        Question 2 Answer: ${quizData['question2'] ? quizData['question2'][0] : ''}\n
-                        Question 3 Answer: ${quizData['question3'] ? quizData['question3'][0] : ''}\n
-                    `;
-
-                    window.location.href = `mailto:cam8993@hotmail.com?subject=Quiz Results&body=${encodeURIComponent(emailBody)}`;
-                }
-            </script>
         </div>
     </div>
 
     <div id="storybook" class="tab-content">
         <div class="content">
             <h2>Picturebook</h2>
-            <p>Picture.</p>
+            <p>Pictures.</p>
         </div>
     </div>
 
@@ -232,6 +187,34 @@
             const tabs = document.querySelectorAll('.tab');
             tabs.forEach(tab => tab.classList.remove('active'));
             event.target.classList.add('active');
+        }
+
+        function checkPasscode(tabId) {
+            const passcode = prompt("Enter passcode:");
+            if (passcode === "pie") {
+                showTab(tabId);
+            } else {
+                alert("Incorrect passcode.");
+            }
+        }
+
+        function submitQuiz() {
+            const formData = new FormData(document.getElementById('quizForm'));
+            let quizData = {};
+            formData.forEach((value, key) => {
+                if (!quizData[key]) {
+                    quizData[key] = [];
+                }
+                quizData[key].push(value);
+            });
+
+            const emailBody = `
+                Question 1 Answers: ${quizData['question1'] ? quizData['question1'].join(', ') : ''}\n
+                Question 2 Answer: ${quizData['question2'] ? quizData['question2'][0] : ''}\n
+                Question 3 Answer: ${quizData['question3'] ? quizData['question3'][0] : ''}\n
+            `;
+
+            window.location.href = `mailto:cam8993@hotmail.com?subject=Quiz Results&body=${encodeURIComponent(emailBody)}`;
         }
     </script>
 </body>
