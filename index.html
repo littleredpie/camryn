@@ -131,10 +131,10 @@
     <img src="https://raw.githubusercontent.com/littleredpie/camryn/master/20241105_183214~2.jpg" alt="profile_pic.jpg" class="profile-pic">
     
     <div class="tab-container">
-        <div class="tab active" onclick="showTab('about')">About Me</div>
-        <div class="tab" onclick="checkPasscode('Socials', 'pie')">Socials</div>
-        <div class="tab" onclick="checkPasscode('Services/Prices', 'cake')">Services/Prices</div>
-        <div class="tab" onclick="checkPasscode('storybook', 'woods')">Storybook</div>
+        <div class="tab active" onclick="showTab(event, 'about')">About Me</div>
+        <div class="tab" onclick="checkPasscode(event, 'Socials', 'pie')">Socials</div>
+        <div class="tab" onclick="checkPasscode(event, 'Services/Prices', 'cake')">Services/Prices</div>
+        <div class="tab" onclick="checkPasscode(event, 'storybook', 'woods')">Storybook</div>
     </div>
 
     <div id="about" class="tab-content active">
@@ -224,7 +224,7 @@
     </div>
 
     <script>
-        function showTab(tabId) {
+        function showTab(event, tabId) {
             const tabContents = document.querySelectorAll('.tab-content');
             tabContents.forEach(content => content.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
@@ -234,10 +234,10 @@
             event.target.classList.add('active');
         }
 
-        function checkPasscode(tabId, passcode) {
+        function checkPasscode(event, tabId, passcode) {
             const userPasscode = prompt("Enter passcode:");
             if (userPasscode === passcode) {
-                showTab(tabId);
+                showTab(event, tabId);
             } else {
                 alert("Incorrect passcode.");
             }
@@ -247,10 +247,10 @@
             const formData = new FormData(document.getElementById('quizForm'));
             let emailBody = "Quiz Results:\n";
             formData.forEach((value, key) => {
-                emailBody += ${key}: ${value}\n;
+                emailBody += `${key}: ${value}\n`;
             });
 
-            window.location.href = mailto:cam8993@hotmail.com?subject=Quiz Results&body=${encodeURIComponent(emailBody)};
+            window.location.href = `mailto:cam8993@hotmail.com?subject=Quiz Results&body=${encodeURIComponent(emailBody)}`;
         }
     </script>
 </body>
