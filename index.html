@@ -193,6 +193,48 @@
         <div class="content">
             <h2>Services/Prices</h2>
             <li>Details on offered services and pricing.</li>
+            <body>
+    <h1>GitHub Quiz</h1>
+
+    <form id="quizForm">
+        <h3>1. Which of the following are version control systems? (Select all that apply)</h3>
+        <label><input type="checkbox" name="question1" value="Git"> Git</label><br>
+        <label><input type="checkbox" name="question1" value="SVN"> SVN</label><br>
+        <label><input type="checkbox" name="question1" value="Mercurial"> Mercurial</label><br>
+        <label><input type="checkbox" name="question1" value="Dropbox"> Dropbox</label><br>
+
+        <h3>2. What is the purpose of GitHub?</h3>
+        <label><input type="radio" name="question2" value="Hosting code repositories"> Hosting code repositories</label><br>
+        <label><input type="radio" name="question2" value="Image editing"> Image editing</label><br>
+        <label><input type="radio" name="question2" value="Video sharing"> Video sharing</label><br>
+
+        <h3>3. Describe how GitHub helps in collaborative projects.</h3>
+        <textarea name="question3" rows="4" cols="50" placeholder="Your answer here..."></textarea><br><br>
+
+        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+
+    <script>
+        function submitQuiz() {
+            const formData = new FormData(document.getElementById('quizForm'));
+            let quizData = {};
+            formData.forEach((value, key) => {
+                if (!quizData[key]) {
+                    quizData[key] = [];
+                }
+                quizData[key].push(value);
+            });
+
+            const emailBody = `
+                Question 1 Answers: ${quizData['question1'].join(', ')}\n
+                Question 2 Answer: ${quizData['question2'] ? quizData['question2'][0] : ''}\n
+                Question 3 Answer: ${quizData['question3'] ? quizData['question3'][0] : ''}\n
+            `;
+
+            window.location.href = `mailto:your-email@example.com?subject=Quiz Results&body=${encodeURIComponent(emailBody)}`;
+        }
+    </script>
+</body>
         </div>
     </div>
     <div id="storybook" class="tab-content">
