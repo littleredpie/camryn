@@ -67,7 +67,7 @@
             width: 100%;
         }
         textarea {
-            height: 100px;
+            height: 150px; /* Enlarged height */
         }
         input[type="submit"] {
             cursor: pointer;
@@ -109,9 +109,9 @@
     
     <div class="tab-container">
         <div class="tab active" onclick="showTab('about')">About Me</div>
-        <div class="tab" onclick="checkPasscode('Socials')">Socials</div>
-        <div class="tab" onclick="checkPasscode('Services/Prices')">Services/Prices</div>
-        <div class="tab" onclick="checkPasscode('storybook')">Storybook</div>
+        <div class="tab" onclick="checkPasscode('Socials', 'pie')">Socials</div>
+        <div class="tab" onclick="checkPasscode('Services/Prices', 'cake')">Services/Prices</div>
+        <div class="tab" onclick="checkPasscode('storybook', 'woods')">Storybook</div>
     </div>
 
     <div id="about" class="tab-content active">
@@ -132,7 +132,7 @@
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
                 <label for="message">Message (optional):</label>
-                <textarea id="message" name="message" rows="4"></textarea>
+                <textarea id="message" name="message"></textarea>
                 <input type="submit" value="Send">
             </form>
         </div>
@@ -153,7 +153,7 @@
             <h1>Quiz Time</h1>
             <form id="quizForm">
                 <h3 class="quiz-question">1. Name?</h3>
-                <textarea name="question1" rows="4" cols="50" placeholder="Your answer here..."></textarea>
+                <textarea name="question1" placeholder="Your answer here..."></textarea>
                 
                 <h3 class="quiz-question">2. Which are version control systems? (Select all)</h3>
                 <label class="quiz-option"><input type="checkbox" name="question2" value="Git"> Git</label>
@@ -189,9 +189,9 @@
             event.target.classList.add('active');
         }
 
-        function checkPasscode(tabId) {
-            const passcode = prompt("Enter passcode:");
-            if (passcode === "pie") {
+        function checkPasscode(tabId, passcode) {
+            const userPasscode = prompt("Enter passcode:");
+            if (userPasscode === passcode) {
                 showTab(tabId);
             } else {
                 alert("Incorrect passcode.");
