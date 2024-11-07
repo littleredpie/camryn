@@ -110,6 +110,11 @@
             margin-top: 0;
             padding-left: 40px; /* Increased padding to indent bullet points */
         }
+        /* Indent quiz options */
+        .quiz-option {
+            padding-left: 20px;
+            display: block;
+        }
         /* Reduce space between quiz questions and options */
         .quiz-question, form label {
             margin-bottom: 3px;
@@ -169,15 +174,15 @@
                 <textarea name="question3" rows="4" cols="50" placeholder="Your answer here..."></textarea><br><br>
                 
                 <h3 class="quiz-question">1. Which are version control systems? (Select all)</h3>
-                <label><input type="checkbox" name="question1" value="Git"> Git</label>
-                <label><input type="checkbox" name="question1" value="SVN"> SVN</label>
-                <label><input type="checkbox" name="question1" value="Mercurial"> Mercurial</label>
-                <label><input type="checkbox" name="question1" value="Dropbox"> Dropbox</label>
+                <label class="quiz-option"><input type="checkbox" name="question1" value="Git"> Git</label>
+                <label class="quiz-option"><input type="checkbox" name="question1" value="SVN"> SVN</label>
+                <label class="quiz-option"><input type="checkbox" name="question1" value="Mercurial"> Mercurial</label>
+                <label class="quiz-option"><input type="checkbox" name="question1" value="Dropbox"> Dropbox</label>
 
                 <h3 class="quiz-question">2. Purpose of GitHub?</h3>
-                <label><input type="radio" name="question2" value="Hosting code repositories"> Hosting code repositories</label>
-                <label><input type="radio" name="question2" value="Image editing"> Image editing</label>
-                <label><input type="radio" name="question2" value="Video sharing"> Video sharing</label>
+                <label class="quiz-option"><input type="radio" name="question2" value="Hosting code repositories"> Hosting code repositories</label>
+                <label class="quiz-option"><input type="radio" name="question2" value="Image editing"> Image editing</label>
+                <label class="quiz-option"><input type="radio" name="question2" value="Video sharing"> Video sharing</label>
 
                 <h3 class="quiz-question">3. How does GitHub help in collaboration?</h3>
                 <textarea name="question3" rows="4" cols="50" placeholder="Your answer here..."></textarea><br><br>
@@ -228,3 +233,4 @@
     </script>
 </body>
 </html>
+
