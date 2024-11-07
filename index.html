@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cameron</title>
+    <title>Cameryn</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
         body {
@@ -95,19 +95,25 @@
             margin-top: 0;
             padding-left: 40px;
         }
+        /* Align and style quiz options consistently */
         .quiz-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .quiz-question {
-            font-weight: bold;
-        }
-        .quiz-option {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+           display: flex;
+           flex-direction: column;
+           gap: 15px; /* Increase spacing between questions */
+       }
+
+      .quiz-question {
+          margin-bottom: 5px;
+          font-weight: bold;
+      }
+
+     .quiz-option {
+         display: flex;
+         align-items: center;
+         gap: 10px; /* Space between checkbox/radio and label */
+        padding: 5px 0; /* Consistent padding for options */
+      }
+        
         button {
             margin-top: 10px;
             padding: 8px;
@@ -240,10 +246,10 @@
             const formData = new FormData(document.getElementById('quizForm'));
             let emailBody = "Quiz Results:\n";
             formData.forEach((value, key) => {
-                emailBody += `${key}: ${value}\n`;
+                emailBody += ${key}: ${value}\n;
             });
 
-            window.location.href = `mailto:cam8993@hotmail.com?subject=Quiz Results&body=${encodeURIComponent(emailBody)}`;
+            window.location.href = mailto:cam8993@hotmail.com?subject=Quiz Results&body=${encodeURIComponent(emailBody)};
         }
     </script>
 </body>
