@@ -66,9 +66,7 @@
             color: #000;
             width: 100%;
         }
-        /* Increase quiz-specific text box width */
-        .quiz-form textarea {
-            width: 95%;
+        textarea {
             height: 150px;
         }
         input[type="submit"] {
@@ -97,7 +95,7 @@
             margin-top: 0;
             padding-left: 40px;
         }
-        /* Quiz styling adjustments */
+        /* Align and style quiz options consistently */
         .quiz-form {
             display: flex;
             flex-direction: column;
@@ -108,7 +106,12 @@
         }
         .quiz-option {
             padding-left: 20px;
+            display: flex;
+            align-items: center;
             margin-bottom: 2px;
+        }
+        .quiz-option label {
+            margin-left: 8px;
         }
         button {
             margin-top: 10px;
@@ -159,9 +162,9 @@
 
     <div id="Socials" class="tab-content">
         <div class="content">
-            <h2>Policy</h2>
+            <h2>Policy?</h2>
             <li>Hygiene.</li>
-            <li>No. </li>
+            <li>No </li>
         </div>
     </div>
 
@@ -175,15 +178,36 @@
                 <textarea name="question1" placeholder="Your answer here..."></textarea>
                 
                 <h3 class="quiz-question">2. Which are version control systems? (Select all)</h3>
-                <label class="quiz-option"><input type="checkbox" name="question2" value="Git"> Git</label>
-                <label class="quiz-option"><input type="checkbox" name="question2" value="SVN"> SVN</label>
-                <label class="quiz-option"><input type="checkbox" name="question2" value="Mercurial"> Mercurial</label>
-                <label class="quiz-option"><input type="checkbox" name="question2" value="Dropbox"> Dropbox</label>
+                <div class="quiz-option">
+                    <input type="checkbox" name="question2" value="Git">
+                    <label>Git</label>
+                </div>
+                <div class="quiz-option">
+                    <input type="checkbox" name="question2" value="SVN">
+                    <label>SVN</label>
+                </div>
+                <div class="quiz-option">
+                    <input type="checkbox" name="question2" value="Mercurial">
+                    <label>Mercurial</label>
+                </div>
+                <div class="quiz-option">
+                    <input type="checkbox" name="question2" value="Dropbox">
+                    <label>Dropbox</label>
+                </div>
 
                 <h3 class="quiz-question">3. Purpose of?</h3>
-                <label class="quiz-option"><input type="radio" name="question3" value="Hosting code repositories"> Hosting code repositories</label>
-                <label class="quiz-option"><input type="radio" name="question3" value="Image editing"> Image editing</label>
-                <label class="quiz-option"><input type="radio" name="question3" value="Video sharing"> Video sharing</label>
+                <div class="quiz-option">
+                    <input type="radio" name="question3" value="Hosting code repositories">
+                    <label>Hosting code repositories</label>
+                </div>
+                <div class="quiz-option">
+                    <input type="radio" name="question3" value="Image editing">
+                    <label>Image editing</label>
+                </div>
+                <div class="quiz-option">
+                    <input type="radio" name="question3" value="Video sharing">
+                    <label>Video sharing</label>
+                </div>
 
                 <button type="button" onclick="submitQuiz()">Submit Quiz</button>
             </form>
