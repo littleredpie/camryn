@@ -99,6 +99,18 @@
             border: 2px solid #000;
             border-radius: 5px;
         }
+        /* Additional styling to reduce space between header and bullet points */
+        h3, h4 {
+            margin-bottom: 5px;
+        }
+        ul {
+            margin-top: 0;
+            padding-left: 20px;
+        }
+        /* Reduce space between quiz questions and options */
+        form label, .quiz-question {
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -150,18 +162,18 @@
             
             <h1>GitHub Quiz</h1>
             <form id="quizForm">
-                <h3>1. Which are version control systems? (Select all)</h3>
+                <h3 class="quiz-question">1. Which are version control systems? (Select all)</h3>
                 <label><input type="checkbox" name="question1" value="Git"> Git</label>
                 <label><input type="checkbox" name="question1" value="SVN"> SVN</label>
                 <label><input type="checkbox" name="question1" value="Mercurial"> Mercurial</label>
                 <label><input type="checkbox" name="question1" value="Dropbox"> Dropbox</label>
 
-                <h3>2. Purpose of GitHub?</h3>
+                <h3 class="quiz-question">2. Purpose of GitHub?</h3>
                 <label><input type="radio" name="question2" value="Hosting code repositories"> Hosting code repositories</label>
                 <label><input type="radio" name="question2" value="Image editing"> Image editing</label>
                 <label><input type="radio" name="question2" value="Video sharing"> Video sharing</label>
 
-                <h3>3. How does GitHub help in collaboration?</h3>
+                <h3 class="quiz-question">3. How does GitHub help in collaboration?</h3>
                 <textarea name="question3" rows="4" cols="50" placeholder="Your answer here..."></textarea><br><br>
 
                 <button type="button" onclick="submitQuiz()">Submit Quiz</button>
