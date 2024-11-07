@@ -12,7 +12,7 @@
             height: 100vh;
             margin: 0;
             font-family: 'EB Garamond', serif;
-            background-color: #4b0082; /* Background color to darker navy */
+            background-color: #8B0000; /* Dark red background */
             color: #fff; /* Text color = white */
             border-top: 2px solid #fff; /* Border color to white */
         }
@@ -25,81 +25,59 @@
         .tab {
             padding: 10px 20px;
             cursor: pointer;
-            border: 2px solid #fff; /* Border color to white */
+            border: 2px solid #fff;
             border-radius: 5px 5px 0 0;
             margin-right: 2px;
             color: #fff;
         }
         .tab:nth-child(1) {
-            background-color: #774684; /* Lavender */
+            background-color: #ffb6c1; /* Light red */
         }
         .tab:nth-child(2) {
-            background-color: #6a0dad; /* Purple */
+            background-color: #e34234; /* Medium red */
         }
         .tab:nth-child(3) {
-            background-color: #2636A0; /* Blue */
+            background-color: #b22222; /* Darker red */
         }
         .tab:nth-child(4) {
-            background-color: #16166B; /* Teal */
+            background-color: #8b0000; /* Dark red */
         }
         .tab:hover {
             opacity: 0.7;
         }
         .tab-content {
             display: none;
-            border: 4px solid #000000; /* Purple border for all tabs */
+            border: 4px solid #000;
             border-top: none;
             width: 800px;
             height: 1000px;
             overflow: auto;
-            background-color: #fff; /* Content box background to white */
-            color: #000; /* Changed content text color to black */
+            background-color: #fff;
+            color: #000;
             padding: 20px;
-            margin: 20px 0; /* Added margin for spacing */
-            font-family: 'EB Garamond', serif; /* EB Garamond to content-box */
+            margin: 20px 0;
+            font-family: 'EB Garamond', serif;
         }
         .tab-content.active {
             display: block;
         }
-        iframe {
-            border: none;
-            width: 100%;
-            height: 100%;
-        }
         .content {
             padding: 20px;
-        }
-        a {
-            color: #000; /* Changed link color to black */
-            text-decoration: underline;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        ul {
-            margin: 0;
-            padding-left: 40px; /* Indent bullet points */
-        }
-        h2, h3, h4 {
-            margin-bottom: 0;
-        }
-        h3, h4 {
-            margin-top: 0;
         }
         form {
             display: flex;
             flex-direction: column;
+            gap: 10px;
         }
         input, textarea {
-            margin-bottom: 10px;
             padding: 10px;
             font-size: 16px;
-            border: 1px solid #4b0082; /* Decreased border thickness for contact me text box */
-            color: #000; /* Text color in the text box */
+            border: 1px solid #8B0000; /* Contact box border */
+            color: #000;
         }
         input[type="submit"] {
             cursor: pointer;
-            background-color: #6a0dad;
+            background-color: #e34234;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -107,7 +85,7 @@
             transition: all 0.3s ease;
         }
         input[type="submit"]:hover {
-            background-color: #5a00a3;
+            background-color: #b22222;
         }
         input[type="submit"]:active {
             box-shadow: 0 2px #666;
@@ -116,51 +94,34 @@
         .profile-pic {
             display: block;
             margin-top: 10px;
-            width: 150px; /* Adjusted width */
+            width: 150px;
             height: auto;
-            border: 2px solid #000000; /* photo border to black */
-            border-radius: 5px; /* Made photo rectangle or square */
+            border: 2px solid #000;
+            border-radius: 5px;
         }
         .favorite-question {
             margin-bottom: 10px;
-            font-weight: bold; /* Make questions bold */
+            font-weight: bold;
         }
         .answer {
             margin-left: 20px;
-            color: #000; /* Regular font color for answers */
-            list-style-type: disc; /* Bullet point style for answers */
-            font-weight: normal; /* Regular font-weight for answers */
-        }
-        .photos-container {
-            display: flex;
-            flex-direction: column;
-            margin-top: 30px;
-            width: 200px;
-            align-items: center;
-            gap: 10px;
-        }
-        .photos-container img {
-            max-width: 100%;
-            height: auto;
-            border: 2px solid #4b0082; /* Border for images */
-            border-radius: 5px;
-        }
-        .photo-description {
-            text-align: center;
-            font-style: italic;
+            color: #000;
+            list-style-type: disc;
         }
     </style>
 </head>
 <body>
     <h2>Cameron</h2>
-    <p><a href="mailto:cam8993@hotmail.com" style="color: #fff; text-decoration: underline;">cam8993@hotmail.com</a> | -</p>
+    <p><a href="mailto:cam8993@hotmail.com" style="color: #fff; text-decoration: underline;">cam8993@hotmail.com</a></p>
     <img src="https://raw.githubusercontent.com/littleredpie/camryn/master/20241105_183214~2.jpg" alt="profile_pic.jpg" class="profile-pic">
+    
     <div class="tab-container">
         <div class="tab active" onclick="showTab('about')">About Me</div>
         <div class="tab" onclick="showTab('Socials')">Socials</div>
         <div class="tab" onclick="showTab('Services/Prices')">Services/Prices</div>
         <div class="tab" onclick="showTab('storybook')">Storybook</div>
     </div>
+
     <div id="about" class="tab-content active">
         <div class="content">
             <h3>Short little about</h3>
@@ -168,7 +129,7 @@
                 <li>Student</li>
             </ul>
             <h3>Interests</h3>
-            <ul class="interests">
+            <ul>
                 <li>Literature, Broadway, Travel, Nature</li>
             </ul>
             <h4>Contact Me</h4>
@@ -183,85 +144,75 @@
             </form>
         </div>
     </div>
+
     <div id="Socials" class="tab-content">
         <div class="content">
             <h2>Connect!</h2>
             <p>Link your socials here.</p>
         </div>
     </div>
+
     <div id="Services/Prices" class="tab-content">
         <div class="content">
             <h2>Services/Prices</h2>
-            <li>Details on offered services and pricing.</li>
-            <body>
-    <h1>GitHub Quiz</h1>
+            <p>Details on offered services and pricing.</p>
+            <h1>GitHub Quiz</h1>
+            <form id="quizForm">
+                <h3>1. Which of the following are version control systems? (Select all that apply)</h3>
+                <label><input type="checkbox" name="question1" value="Git"> Git</label><br>
+                <label><input type="checkbox" name="question1" value="SVN"> SVN</label><br>
+                <label><input type="checkbox" name="question1" value="Mercurial"> Mercurial</label><br>
+                <label><input type="checkbox" name="question1" value="Dropbox"> Dropbox</label><br>
 
-    <form id="quizForm">
-        <h3>1. Which of the following are version control systems? (Select all that apply)</h3>
-        <label><input type="checkbox" name="question1" value="Git"> Git</label><br>
-        <label><input type="checkbox" name="question1" value="SVN"> SVN</label><br>
-        <label><input type="checkbox" name="question1" value="Mercurial"> Mercurial</label><br>
-        <label><input type="checkbox" name="question1" value="Dropbox"> Dropbox</label><br>
+                <h3>2. What is the purpose of GitHub?</h3>
+                <label><input type="radio" name="question2" value="Hosting code repositories"> Hosting code repositories</label><br>
+                <label><input type="radio" name="question2" value="Image editing"> Image editing</label><br>
+                <label><input type="radio" name="question2" value="Video sharing"> Video sharing</label><br>
 
-        <h3>2. What is the purpose of GitHub?</h3>
-        <label><input type="radio" name="question2" value="Hosting code repositories"> Hosting code repositories</label><br>
-        <label><input type="radio" name="question2" value="Image editing"> Image editing</label><br>
-        <label><input type="radio" name="question2" value="Video sharing"> Video sharing</label><br>
+                <h3>3. Describe how GitHub helps in collaborative projects.</h3>
+                <textarea name="question3" rows="4" cols="50" placeholder="Your answer here..."></textarea><br><br>
 
-        <h3>3. Describe how GitHub helps in collaborative projects.</h3>
-        <textarea name="question3" rows="4" cols="50" placeholder="Your answer here..."></textarea><br><br>
+                <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+            </form>
 
-        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
-    </form>
+            <script>
+                function submitQuiz() {
+                    const formData = new FormData(document.getElementById('quizForm'));
+                    let quizData = {};
+                    formData.forEach((value, key) => {
+                        if (!quizData[key]) {
+                            quizData[key] = [];
+                        }
+                        quizData[key].push(value);
+                    });
 
-    <script>
-        function submitQuiz() {
-            const formData = new FormData(document.getElementById('quizForm'));
-            let quizData = {};
-            formData.forEach((value, key) => {
-                if (!quizData[key]) {
-                    quizData[key] = [];
+                    const emailBody = `
+                        Question 1 Answers: ${quizData['question1'].join(', ')}\n
+                        Question 2 Answer: ${quizData['question2'] ? quizData['question2'][0] : ''}\n
+                        Question 3 Answer: ${quizData['question3'] ? quizData['question3'][0] : ''}\n
+                    `;
+
+                    window.location.href = `mailto:cam8993@hotmail.com?subject=Quiz Results&body=${encodeURIComponent(emailBody)}`;
                 }
-                quizData[key].push(value);
-            });
-
-            const emailBody = `
-                Question 1 Answers: ${quizData['question1'].join(', ')}\n
-                Question 2 Answer: ${quizData['question2'] ? quizData['question2'][0] : ''}\n
-                Question 3 Answer: ${quizData['question3'] ? quizData['question3'][0] : ''}\n
-            `;
-
-            window.location.href = `mailto:your-email@example.com?subject=Quiz Results&body=${encodeURIComponent(emailBody)}`;
-        }
-    </script>
-</body>
+            </script>
         </div>
     </div>
+
     <div id="storybook" class="tab-content">
         <div class="content">
             <h2>Picturebook</h2>
-            <p>Peand ed here.</p>
+            <p>Place your storybook content here.</p>
         </div>
     </div>
+
     <script>
         function showTab(tabId) {
-            // Hide all tab contents
             const tabContents = document.querySelectorAll('.tab-content');
-            tabContents.forEach(content => {
-                content.classList.remove('active');
-            });
-
-            // Remove active class from all tabs
+            tabContents.forEach(content => content.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            
             const tabs = document.querySelectorAll('.tab');
-            tabs.forEach(tab => {
-                tab.classList.remove('active');
-            });
-
-            // Show the selected tab content
-            const selectedTabContent = document.getElementById(tabId);
-            if (selectedTabContent) selectedTabContent.classList.add('active');
-
-            // Add active class to the clicked tab
+            tabs.forEach(tab => tab.classList.remove('active'));
             event.target.classList.add('active');
         }
     </script>
