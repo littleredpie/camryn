@@ -136,14 +136,16 @@
 </head>
 <body>
     <script>
-        const passcode = "honey"; // Replace with your desired passcode
-        const userPasscode = prompt("Please enter the passcode:");
+        document.addEventListener("DOMContentLoaded", function() {
+            const passcode = "honey"; // Replace with your desired passcode
+            const userPasscode = prompt("Please enter the passcode:");
 
-        if (userPasscode === passcode) {
-            document.getElementById('content').style.display = "block";
-        } else {
-            alert("Incorrect passcode.");
-        }
+            if (userPasscode === passcode) {
+                document.getElementById('content').style.display = "block";
+            } else {
+                alert("Incorrect passcode.");
+            }
+        });
     </script>
 
     <div id="content">
@@ -201,10 +203,10 @@
                 <p>Average Price: $420</p>
                 <h4>Service Quiz</h4>
                 <form>
-                    <p>1.Your Name:</p>
+                    <p>1. Your Name:</p>
                     <textarea placeholder="Your answer..."></textarea>
                     <p>2. Honorific(s)?</p>
-                    <label><input type="checkbox" name="honorifics" value="Git"> Gi</label>
+                    <label><input type="checkbox" name="honorifics" value="Git"> Git</label>
                     <label><input type="checkbox" name="honorifics" value="SVN"> SVN</label>
                     <label><input type="checkbox" name="honorifics" value="Mercurial"> Mercurial</label>
                     <label><input type="checkbox" name="honorifics" value="Dropbox"> Dropbox</label>
@@ -215,7 +217,7 @@
         <div id="storybook" class="tab-content">
             <div class="content">
                 <h3>Picturebook</h3>
-                <p>Gallery soon...</p>
+                <p>Gallery coming soon...</p>
             </div>
         </div>
     </div>
