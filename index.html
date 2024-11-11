@@ -25,6 +25,10 @@
             min-height: 100vh;
             padding: 20px;
         }
+
+        #content {
+            display: none; /* Hide content until correct passcode is entered */
+        }
         
         h2 {
             margin-bottom: 10px;
@@ -79,7 +83,7 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #fff;
+            border: 5px solid #fff;
         }
         
         a {
@@ -131,75 +135,88 @@
     </style>
 </head>
 <body>
-    <div class="profile-section">
-        <h2>Cameryn</h2>
-        <p><a href="mailto:cam8993@hotmail.com">cam8993@hotmail.com</a></p>
-        <img src="https://raw.githubusercontent.com/littleredpie/camryn/master/20241105_183214~2.jpg" alt="Profile Picture" class="profile-pic">
-    </div>
-    
-    <div class="tab-container">
-        <button class="tab active" onclick="showTab(event, 'about')">About Me</button>
-        <button class="tab" onclick="showTab(event, 'socials')">Socials</button>
-        <button class="tab" onclick="showTab(event, 'services')">Services/Prices</button>
-        <button class="tab" onclick="showTab(event, 'storybook')">Storybook</button>
-    </div>
-    
-    <div id="about" class="tab-content active">
-        <div class="content">
-            <h3>About Me</h3>
-            <p>Student | Code: pie | 2nd code: cake</p>
-            <h4>Interests</h4>
-            <ul>
-                <li>Literature</li>
-                <li>Broadway</li>
-                <li>Nature</li>
-                <li>Sushi, Italian</li>
-                <li>Movies</li>
-            </ul>
-            <h4>Contact Me</h4>
-            <form action="mailto:cam8993@hotmail.com" method="post" enctype="text/plain">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4"></textarea>
-                
-                <input type="submit" value="Send">
-            </form>
+    <script>
+        const passcode = "correct_passcode"; // Replace with your desired passcode
+        const userPasscode = prompt("Please enter the passcode:");
+
+        if (userPasscode === passcode) {
+            document.getElementById('content').style.display = "block";
+        } else {
+            alert("Incorrect passcode. Access denied.");
+        }
+    </script>
+
+    <div id="content">
+        <div class="profile-section">
+            <h2>Cameryn</h2>
+            <p><a href="mailto:cam8993@hotmail.com">cam8993@hotmail.com</a></p>
+            <img src="https://raw.githubusercontent.com/littleredpie/camryn/master/20241105_183214~2.jpg" alt="Profile Picture" class="profile-pic">
         </div>
-    </div>
-    
-    <div id="socials" class="tab-content">
-        <div class="content">
-            <h3>Socials</h3>
-            <p>Details coming soon...</p>
+        
+        <div class="tab-container">
+            <button class="tab active" onclick="showTab(event, 'about')">About Me</button>
+            <button class="tab" onclick="showTab(event, 'socials')">Socials</button>
+            <button class="tab" onclick="showTab(event, 'services')">Services/Prices</button>
+            <button class="tab" onclick="showTab(event, 'storybook')">Storybook</button>
         </div>
-    </div>
-    
-    <div id="services" class="tab-content">
-        <div class="content">
-            <h3>Services/Prices</h3>
-            <p>Average Price: $420</p>
-            <h4>Service Quiz</h4>
-            <form>
-                <p>1. Your Name:</p>
-                <textarea placeholder="Your answer..."></textarea>
-                <p>2. Honorific(s)?</p>
-                <label><input type="checkbox" name="honorifics" value="Git"> Git</label>
-                <label><input type="checkbox" name="honorifics" value="SVN"> SVN</label>
-                <label><input type="checkbox" name="honorifics" value="Mercurial"> Mercurial</label>
-                <label><input type="checkbox" name="honorifics" value="Dropbox"> Dropbox</label>
-            </form>
+        
+        <div id="about" class="tab-content active">
+            <div class="content">
+                <h3>About Me</h3>
+                <p>Student | Code: pie | 2nd code: cake</p>
+                <h4>Interests</h4>
+                <ul>
+                    <li>Literature</li>
+                    <li>Broadway</li>
+                    <li>Nature</li>
+                    <li>Sushi, Italian</li>
+                    <li>Movies</li>
+                </ul>
+                <h4>Contact Me</h4>
+                <form action="mailto:cam8993@hotmail.com" method="post" enctype="text/plain">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                    
+                    <input type="submit" value="Send">
+                </form>
+            </div>
         </div>
-    </div>
-    
-    <div id="storybook" class="tab-content">
-        <div class="content">
-            <h3>Picturebook</h3>
-            <p>Gallery coming soon...</p>
+        
+        <div id="socials" class="tab-content">
+            <div class="content">
+                <h3>Socials</h3>
+                <p>Details coming soon...</p>
+            </div>
+        </div>
+        
+        <div id="services" class="tab-content">
+            <div class="content">
+                <h3>Services/Prices</h3>
+                <p>Average Price: $420</p>
+                <h4>Service Quiz</h4>
+                <form>
+                    <p>1. Your Name:</p>
+                    <textarea placeholder="Your answer..."></textarea>
+                    <p>2. Honorific(s)?</p>
+                    <label><input type="checkbox" name="honorifics" value="Git"> Git</label>
+                    <label><input type="checkbox" name="honorifics" value="SVN"> SVN</label>
+                    <label><input type="checkbox" name="honorifics" value="Mercurial"> Mercurial</label>
+                    <label><input type="checkbox" name="honorifics" value="Dropbox"> Dropbox</label>
+                </form>
+            </div>
+        </div>
+        
+        <div id="storybook" class="tab-content">
+            <div class="content">
+                <h3>Picturebook</h3>
+                <p>Gallery coming soon...</p>
+            </div>
         </div>
     </div>
 
@@ -214,4 +231,3 @@
     </script>
 </body>
 </html>
-
